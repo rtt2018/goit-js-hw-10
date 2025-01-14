@@ -2,17 +2,20 @@ import flatpickr from 'flatpickr';
 import { Ukrainian } from 'flatpickr/dist/l10n/uk.js';
 import iziToast from 'izitoast';
 
+let userSelectedDate;
+
 const options = {
+  locale: Ukrainian,
+  dateFormat: 'd F Y H:i',
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
     console.log(selectedDates[0]);
+    userSelectedDate = selectedDates[0];
   },
 };
-
-let userSelectedDate;
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
@@ -39,8 +42,4 @@ console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20
 
 function addLeadingZero(value) {}
 
-const calendar = flatpickr('#datetime-picker', {
-  locale: Ukrainian,
-  enableTime: true,
-  dateFormat: 'd F Y H:i',
-});
+const calendar = flatpickr('#datetime-picker', options);
