@@ -1,4 +1,5 @@
 import flatpickr from 'flatpickr';
+import { Ukrainian } from 'flatpickr/dist/l10n/uk.js';
 import iziToast from 'izitoast';
 
 const options = {
@@ -37,3 +38,9 @@ console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
 console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
 
 function addLeadingZero(value) {}
+
+const calendar = flatpickr('#datetime-picker', {
+  locale: Ukrainian,
+  enableTime: true,
+  dateFormat: 'd F Y G:i',
+});
