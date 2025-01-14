@@ -42,5 +42,5 @@ function addLeadingZero(value) {}
 const calendar = flatpickr('#datetime-picker', {
   locale: Ukrainian,
   enableTime: true,
-  dateFormat: 'd F Y G:i',
+  dateFormat: 'd F Y H:i',
 });
