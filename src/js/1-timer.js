@@ -3,6 +3,7 @@ import { Ukrainian } from 'flatpickr/dist/l10n/uk.js';
 import iziToast from 'izitoast';
 
 let userSelectedDate;
+const startButton = document.querySelector('.button-start');
 
 const options = {
   locale: Ukrainian,
@@ -14,16 +15,13 @@ const options = {
 
   onClose(selectedDates) {
     const unixDate = new Date(selectedDates[0]).getTime();
-
     if (unixDate < Date.now()) {
       console.log('Ти обрав минуле!');
+      startButton.disabled = true;
       return;
     }
-    console.log('onClose  unixDate:', unixDate);
+    startButton.disabled = false;
     userSelectedDate = unixDate;
-
-    console.log('onClose  Date:', new Date().getTime());
-    console.log('onClose  Number:', unixDate);
   },
 };
 
