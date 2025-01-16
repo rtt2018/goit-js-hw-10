@@ -19,17 +19,20 @@ function startCountDown() {
 
   const playCountDown = setInterval(() => {
     const timePreiod = userSelectedDate - Date.now();
-    if (timePreiod < 0) {
-      clearInterval(playCountDown);
-      calendarField.disabled = false;
-      return;
-    }
     const timePreiodArray = convertMs(timePreiod);
     const { days, hours, minutes, seconds } = timePreiodArray;
     daysSpan.textContent = addLeadingZero(days);
     hoursSpan.textContent = addLeadingZero(hours);
     minutesSpan.textContent = addLeadingZero(minutes);
     secondsSpan.textContent = addLeadingZero(seconds);
+    if (
+      timePreiod <= 0 ||
+      (days === 0 && hours === 0 && minutes === 0 && seconds === 0)
+    ) {
+      clearInterval(playCountDown);
+      calendarField.disabled = false;
+      return;
+    }
   }, 1000);
 }
 
