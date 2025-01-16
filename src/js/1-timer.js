@@ -50,7 +50,7 @@ const options = {
         messageColor: '#fff',
         backgroundColor: '#ef4040',
         position: 'topRight',
-        iconUrl: '/allert.svg',
+        iconUrl: '/img/allert.svg',
         iconColor: '#FAFAFB',
         title: 'Error',
         titleColor: '#fff',
