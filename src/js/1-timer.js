@@ -51,6 +51,7 @@ const options = {
         backgroundColor: '#ef4040',
         position: 'topRight',
         iconUrl: '../img/allert.svg',
+        iconColor: '#FAFAFB',
         title: 'Error',
         titleColor: '#fff',
         borderRadius: '4px',
