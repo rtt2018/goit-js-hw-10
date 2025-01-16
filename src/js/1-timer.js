@@ -1,6 +1,7 @@
 import flatpickr from 'flatpickr';
 import { Ukrainian } from 'flatpickr/dist/l10n/uk.js';
 import iziToast from 'izitoast';
+import iconSvg from '../img/allert.svg';
 
 let userSelectedDate;
 const startButton = document.querySelector('.button-start');
@@ -50,7 +51,7 @@ const options = {
         messageColor: '#fff',
         backgroundColor: '#ef4040',
         position: 'topRight',
-        iconUrl: '/img/allert.svg',
+        iconUrl: iconSvg,
         iconColor: '#FAFAFB',
         title: 'Error',
         titleColor: '#fff',
