@@ -97,3 +97,9 @@
   line-height: 150%;
   color: #2e2f42;
 }
+
+.iziToast-icon {
+  color: #fafafb;
+  fill: #fafafb;
+  stroke: #fafafb;
+}

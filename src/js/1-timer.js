@@ -50,11 +50,12 @@ const options = {
         messageColor: '#fff',
         backgroundColor: '#ef4040',
         position: 'topRight',
-        iconUrl: '../img/allert.svg',
+        iconUrl: '/img/allert.svg',
         iconColor: '#FAFAFB',
         title: 'Error',
         titleColor: '#fff',
         borderRadius: '4px',
+        timeout: 500000,
       });
       startButton.disabled = true;
       return;
