@@ -56,7 +56,6 @@ const options = {
         title: 'Error',
         titleColor: '#fff',
         borderRadius: '4px',
-        timeout: 500000,
       });
       startButton.disabled = true;
       return;
