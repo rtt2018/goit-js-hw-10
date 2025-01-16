@@ -69,10 +69,20 @@
   background-color: #6c8cff;
 }
 
+.timer-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 32px;
+  width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 .timer {
   display: flex;
   gap: 24px;
-  margin-top: 32px;
 }
 
 .field {
@@ -102,4 +112,19 @@
   color: #fafafb;
   fill: #fafafb;
   stroke: #fafafb;
+}
+
+.iziToast,
+.iziToast::after {
+  border-radius: 4px 4px 2px 2px;
+}
+
+.iziToast > .iziToast-progressbar {
+  background-color: #ffbebe;
+  border-radius: 0 0 8px 8px;
+}
+
+.iziToast > .iziToast-progressbar > div {
+  background-color: #b51b1b;
+  border-radius: 0 0 0px 4px;
 }

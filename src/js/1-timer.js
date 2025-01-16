@@ -25,7 +25,6 @@ function startCountDown() {
       return;
     }
     const timePreiodArray = convertMs(timePreiod);
-    console.log('playCountDown  timePreiodArray:', timePreiodArray);
     const { days, hours, minutes, seconds } = timePreiodArray;
     daysSpan.textContent = addLeadingZero(days);
     hoursSpan.textContent = addLeadingZero(hours);
@@ -36,7 +35,7 @@ function startCountDown() {
 
 const options = {
   locale: Ukrainian,
-  dateFormat: 'd F Y H:i',
+  dateFormat: 'Y-m-d H:i',
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
@@ -55,7 +54,6 @@ const options = {
         iconColor: '#FAFAFB',
         title: 'Error',
         titleColor: '#fff',
-        borderRadius: '4px',
       });
       startButton.disabled = true;
       return;
