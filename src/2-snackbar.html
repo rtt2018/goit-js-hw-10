@@ -9,46 +9,47 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <a class="nav-link" href="./index.html">Back</a>
-    <a class="nav-link" href="./1-timer.html">Timer</a>
-
-    <main>
-      <div class="container">
-        <h1 class="main-title">Генератор промісів!</h1>
-      </div>
-      <form class="form">
-        <label class="delay-field">
-          Delay (ms)
-          <input type="number" min="1" name="delay" required />
-        </label>
-
-        <fieldset class="state-legend">
-          <legend>State</legend>
-          <label class="radio-label">
-            <input
-              class="state-check"
-              type="radio"
-              name="state"
-              value="fulfilled"
-              required
-            />
-            Fulfilled
+    <div class="container">
+      <a class="nav-link" href="./index.html">Back</a>
+      <a class="nav-link" href="./1-timer.html">Timer</a>
+      <main>
+        <div class="container">
+          <h1 class="main-title">Генератор промісів!</h1>
+        </div>
+        <form class="form">
+          <label class="delay-field">
+            Delay (ms)
+            <input type="number" min="1" name="delay" required />
           </label>
-          <label class="radio-label">
-            <input
-              class="state-check"
-              type="radio"
-              name="state"
-              value="rejected"
-              required
-            />
-            Rejected
-          </label>
-        </fieldset>
-
-        <button class="create-button" type="submit">Create notification</button>
-      </form>
-    </main>
+          <fieldset class="state-legend">
+            <legend>State</legend>
+            <label class="radio-label">
+              <input
+                class="state-check"
+                type="radio"
+                name="state"
+                value="fulfilled"
+                required
+              />
+              Fulfilled
+            </label>
+            <label class="radio-label">
+              <input
+                class="state-check"
+                type="radio"
+                name="state"
+                value="rejected"
+                required
+              />
+              Rejected
+            </label>
+          </fieldset>
+          <button class="create-button" type="submit">
+            Create notification
+          </button>
+        </form>
+      </main>
+    </div>
 
     <script src="./js/2-snackbar.js" type="module"></script>
   </body>
