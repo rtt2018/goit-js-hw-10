@@ -172,7 +172,7 @@
   border-radius: 4px 4px 2px 2px;
 }
 
-.iziToast > .iziToast-progressbar {
+.iziToast-progressbar {
   background-color: #ffbebe;
   border-radius: 0 0 8px 8px;
 }

@@ -1,39 +1,62 @@
 import iziToast from 'izitoast';
 import iconSvgError from '../img/allert.svg';
 import iconSvgOk from '../img/ok.svg';
+import iconSvgWarning from '../img/warning.svg';
+import iconSvgBell from '../img/bell.svg';
 
 const createButton = document.querySelector('.create-button');
 const promiseForm = document.querySelector('.form');
+
+iziToast.show({
+  message: 'Welcome!',
+  messageColor: '#fff',
+  title: 'Hello',
+  titleColor: '#fff',
+  backgroundColor: '#09f',
+  progressBarColor: '#0071bd',
+  position: 'topRight',
+  iconUrl: iconSvgBell,
+  onOpened: function () {
+    const progressBarGreen = document.querySelector('.iziToast-progressbar');
+    progressBarGreen.setAttribute('style', 'border-color: #b8e3ff;');
+  },
+});
+
 createButton.addEventListener('click', createPromise);
 
 function createPromise(event) {
   event.preventDefault();
   const delayInput = document.querySelector('input[name="delay"]');
-  console.log('createPromise  delayInput:', delayInput);
   const getStateInput = document.querySelector('input[name="state"]:checked');
   if (delayInput.value === '') {
+    console.log('Не спіши, введи тривалість затримки!');
     iziToast.show({
-      message: 'Не спіши, введи тривалість затримки!',
+      message: 'You forgot to enter important data',
       messageColor: '#fff',
-      backgroundColor: '#ef4040',
+      title: 'Caution',
+      titleColor: '#fff',
+      backgroundColor: '#ffa000',
+      progressBarColor: '#bb7b10',
       position: 'topRight',
-      progressBar: false,
+      iconUrl: iconSvgWarning,
     });
     return;
   }
   if (!getStateInput) {
-    console.log('Вибери тип промісу!');
+    console.log('Нічого не буде! Треба вибрати тип промісу!');
     iziToast.show({
-      message: 'Нічого не буде! Треба вибрати тип промісу!',
+      message: 'You forgot to enter important data',
       messageColor: '#fff',
-      backgroundColor: '#ef4040',
+      title: 'Caution',
+      titleColor: '#fff',
+      backgroundColor: '#ffa000',
+      progressBarColor: '#bb7b10',
       position: 'topRight',
-      progressBar: false,
+      iconUrl: iconSvgWarning,
     });
     return;
   }
   const promiseDelay = Number(delayInput.value);
-  console.log('createPromise  promiseDely:', promiseDelay);
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (getStateInput.value === 'fulfilled') {
@@ -55,16 +78,22 @@ function createPromise(event) {
         backgroundColor: '#59a10d',
         color: '#fff',
         progressBarColor: '#326101',
-        // progressBarColor: '#b5ea7c',
-
+        borderColor: '#b5ea7c',
         position: 'topRight',
         iconUrl: iconSvgOk,
+        onOpened: function () {
+          const progressBarGreen = document.querySelector(
+            '.iziToast-progressbar'
+          );
+          progressBarGreen.setAttribute('style', 'border-color: #b5ea7c;');
+        },
       });
     })
     .catch(() => {
       console.log(`❌ Rejected promise in ${promiseDelay}ms`);
       iziToast.show({
         title: 'Error',
+        titleColor: '#fff',
         message: `❌ Rejected promise in ${promiseDelay}ms`,
         messageColor: '#fff',
         backgroundColor: '#ef4040',
@@ -73,8 +102,5 @@ function createPromise(event) {
       });
     });
 
-  console.log('promise  promise:', promise);
-
-  console.log('getStateInput:', getStateInput);
   promiseForm.reset();
 }
