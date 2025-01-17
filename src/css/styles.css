@@ -15,3 +15,11 @@
 @import url('./container.css');
 @import url('./modern-normalize.css');
 /* Sections style */
+
+.index-href {
+  text-align: center;
+}
+
+.index-description {
+  width: 600px;
+}
