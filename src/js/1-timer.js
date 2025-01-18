@@ -64,6 +64,25 @@ const options = {
     startButton.disabled = false;
     userSelectedDate = unixDate;
   },
+  onChange(selectedDates) {
+    const verifyDate = new Date(selectedDates[0]).getTime();
+    if (verifyDate < Date.now()) {
+      console.log('Ти обрав минуле!');
+      iziToast.show({
+        message: 'Please choose a date in the future',
+        messageColor: '#fff',
+        backgroundColor: '#ef4040',
+        position: 'topRight',
+        iconUrl: iconSvg,
+        iconColor: '#FAFAFB',
+        title: 'Error',
+        titleColor: '#fff',
+      });
+      startButton.disabled = true;
+      selectedDates.length = 0;
+      return;
+    }
+  },
 };
 
 function convertMs(ms) {

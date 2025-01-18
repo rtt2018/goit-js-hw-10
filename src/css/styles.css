@@ -15,6 +15,9 @@
 @import url('./container.css');
 @import url('./modern-normalize.css');
 /* Sections style */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .index-href {
   text-align: center;
@@ -22,4 +25,11 @@
 
 .index-description {
   width: 600px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 30px;
+  margin-top: 20px;
 }
