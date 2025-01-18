@@ -40,6 +40,7 @@ function createPromise(event) {
       position: 'topRight',
       iconUrl: iconSvgWarning,
     });
+    event.currentTarget.reset();
     return;
   }
 
@@ -57,6 +58,22 @@ function createPromise(event) {
       position: 'topRight',
       iconUrl: iconSvgWarning,
     });
+    event.currentTarget.reset();
+    return;
+  }
+  if (delayInput.value === '0') {
+    console.log('Нуль? Так не терпиться?');
+    iziToast.show({
+      message: 'Передбачено! Введи коректне число!',
+      messageColor: '#fff',
+      title: 'Caution',
+      titleColor: '#fff',
+      backgroundColor: '#ffa000',
+      progressBarColor: '#bb7b10',
+      position: 'topRight',
+      iconUrl: iconSvgWarning,
+    });
+    event.currentTarget.reset();
     return;
   }
 
@@ -72,6 +89,7 @@ function createPromise(event) {
       position: 'topRight',
       iconUrl: iconSvgWarning,
     });
+    event.currentTarget.reset();
     return;
   }
   if (!getStateInput) {
@@ -86,6 +104,7 @@ function createPromise(event) {
       position: 'topRight',
       iconUrl: iconSvgWarning,
     });
+
     return;
   }
   const promiseDelay = Number(delayInput.value);
