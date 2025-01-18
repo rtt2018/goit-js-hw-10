@@ -62,7 +62,7 @@ function createPromise(event) {
     return;
   }
   if (delayInput.value === '0') {
-    console.log('Нуль? Так не терпиться?');
+    console.log('Нуль? Так не терпиться? Введи хоча б 1!');
     iziToast.show({
       message: 'Передбачено! Введи коректне число!',
       messageColor: '#fff',
