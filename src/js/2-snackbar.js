@@ -42,6 +42,38 @@ function createPromise(event) {
     });
     return;
   }
+
+  if (Number(delayInput.value) < 0) {
+    console.log(
+      "Від'ємне число? Ти не промах. Але і я також! Спробуй ще! Виклик прийняв!"
+    );
+    iziToast.show({
+      message: 'Передбачено! Введи коректне число!',
+      messageColor: '#fff',
+      title: 'Caution',
+      titleColor: '#fff',
+      backgroundColor: '#ffa000',
+      progressBarColor: '#bb7b10',
+      position: 'topRight',
+      iconUrl: iconSvgWarning,
+    });
+    return;
+  }
+
+  if (!/^\d+$/.test(delayInput.value)) {
+    console.log('І це все, що ти можеш? :))');
+    iziToast.show({
+      message: 'Передбачено! Введи коректне число!',
+      messageColor: '#fff',
+      title: 'Caution',
+      titleColor: '#fff',
+      backgroundColor: '#ffa000',
+      progressBarColor: '#bb7b10',
+      position: 'topRight',
+      iconUrl: iconSvgWarning,
+    });
+    return;
+  }
   if (!getStateInput) {
     console.log('Нічого не буде! Треба вибрати тип промісу!');
     iziToast.show({
