@@ -1,4 +1,3 @@
-
 .flatpickr-calendar {
   border-radius: 8px;
   padding: 16px;
@@ -102,7 +101,7 @@ span.flatpickr-weekday {
   height: 100%;
   aspect-ratio: 1 / 1;
   text-align: center;
-  line-height: 2;
+  line-height: 2.2;
   font-weight: 400;
   font-size: 16px;
   letter-spacing: 0.04em;

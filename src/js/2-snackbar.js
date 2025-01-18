@@ -4,8 +4,8 @@ import iconSvgOk from '../img/ok.svg';
 import iconSvgWarning from '../img/warning.svg';
 import iconSvgBell from '../img/bell.svg';
 
-const createButton = document.querySelector('.create-button');
 const promiseForm = document.querySelector('.form');
+promiseForm.setAttribute('novalidate', '');
 
 iziToast.show({
   message: 'Welcome!',
@@ -22,7 +22,7 @@ iziToast.show({
   },
 });
 
-createButton.addEventListener('click', createPromise);
+promiseForm.addEventListener('submit', createPromise);
 
 function createPromise(event) {
   event.preventDefault();
@@ -60,18 +60,18 @@ function createPromise(event) {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (getStateInput.value === 'fulfilled') {
-        resolve('Success! Value passed to resolve function');
+        resolve(`✅ Fulfilled promise in ${promiseDelay}ms`);
       } else {
-        reject('Error! Error passed to reject function');
+        reject(`❌ Rejected promise in ${promiseDelay}ms`);
       }
     }, promiseDelay);
   });
 
   promise
-    .then(() => {
-      console.log(`✅ Fulfilled promise in ${promiseDelay}ms`);
+    .then(stateResult => {
+      console.log(stateResult);
       iziToast.show({
-        message: `✅ Fulfilled promise in ${promiseDelay}ms`,
+        message: stateResult,
         title: 'OK',
         titleColor: '#fff',
         messageColor: '#fff',
@@ -89,12 +89,12 @@ function createPromise(event) {
         },
       });
     })
-    .catch(() => {
-      console.log(`❌ Rejected promise in ${promiseDelay}ms`);
+    .catch(stateResult => {
+      console.log(stateResult);
       iziToast.show({
         title: 'Error',
         titleColor: '#fff',
-        message: `❌ Rejected promise in ${promiseDelay}ms`,
+        message: stateResult,
         messageColor: '#fff',
         backgroundColor: '#ef4040',
         position: 'topRight',
@@ -102,5 +102,5 @@ function createPromise(event) {
       });
     });
 
-  promiseForm.reset();
+  event.currentTarget.reset();
 }
