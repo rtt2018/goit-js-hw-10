@@ -47,7 +47,7 @@ const options = {
   onClose(selectedDates) {
     const unixDate = new Date(selectedDates[0]).getTime();
     if (unixDate < Date.now()) {
-      console.log('Ти обрав минуле!');
+      console.log('Ти обрав минуле! Але його вже не повернути. Не оглядайся!');
       iziToast.show({
         message: 'Please choose a date in the future',
         messageColor: '#fff',

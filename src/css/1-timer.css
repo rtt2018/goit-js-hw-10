@@ -20,15 +20,19 @@
 
 .text-wrapper {
   display: flex;
-  gap: 12px;
+  gap: 8px;
 }
 
 .verse-header {
   font-weight: 700;
 }
 
+.verse-text {
+  width: 240px;
+}
+
 .verse-container {
-  width: 230px;
+  width: 240px;
   box-shadow: -11px 0 10px rgba(62, 4, 4, 0.491);
   border-radius: 8px 0 0 8px;
   padding: 20px;
