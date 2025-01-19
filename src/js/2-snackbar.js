@@ -80,7 +80,6 @@ const promiseTypeUndefinedMessage = {
 };
 
 const promiseFillfilledMessage = {
-  message: stateResult,
   title: 'OK',
   titleColor: '#fff',
   messageColor: '#fff',
@@ -99,7 +98,6 @@ const promiseFillfilledMessage = {
 const promiseRejectedMessage = {
   title: 'Error',
   titleColor: '#fff',
-  message: stateResult,
   messageColor: '#fff',
   backgroundColor: '#ef4040',
   position: 'topRight',
@@ -163,10 +161,12 @@ function createPromise(event) {
   promise
     .then(stateResult => {
       console.log(stateResult);
+      promiseFillfilledMessage.message = stateResult;
       iziToast.show(promiseFillfilledMessage);
     })
     .catch(stateResult => {
       console.log(stateResult);
+      promiseRejectedMessage.message = stateResult;
       iziToast.show(promiseRejectedMessage);
     });
 
