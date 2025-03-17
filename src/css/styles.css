@@ -46,3 +46,8 @@ body {
   display: flex;
   gap: 50px;
 }
+
+.message {
+  font-weight: bold;
+  margin-top: 32px;
+}
