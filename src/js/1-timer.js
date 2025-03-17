@@ -34,7 +34,7 @@ function startCountDown() {
       iziToast.show({
         message: 'Done!',
         messageColor: '#fff',
-        backgroundColor: '#ef4040',
+        backgroundColor: '#59a10d',
         position: 'topRight',
         iconColor: '#FAFAFB',
         title: 'OK',
@@ -60,7 +60,7 @@ const options = {
       iziToast.show({
         message: 'Please choose a date in the future',
         messageColor: '#fff',
-        backgroundColor: '#59a10d',
+        backgroundColor: '#ef4040',
         position: 'topRight',
         iconUrl: iconSvg,
         iconColor: '#FAFAFB',
