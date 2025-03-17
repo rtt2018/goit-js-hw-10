@@ -31,7 +31,7 @@ function startCountDown() {
     ) {
       clearInterval(playCountDown);
       calendarField.disabled = false;
-      iziToast.success({
+      iziToast.show({
         message: 'Done!',
         messageColor: '#fff',
         backgroundColor: '#ef4040',
