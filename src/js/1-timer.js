@@ -31,6 +31,15 @@ function startCountDown() {
     ) {
       clearInterval(playCountDown);
       calendarField.disabled = false;
+      iziToast.success({
+        message: 'Done!',
+        messageColor: '#fff',
+        backgroundColor: '#ef4040',
+        position: 'topRight',
+        iconColor: '#FAFAFB',
+        title: 'OK',
+        titleColor: '#fff',
+      });
       return;
     }
   }, 1000);
